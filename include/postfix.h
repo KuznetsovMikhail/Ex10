@@ -4,7 +4,5 @@
 
 #include <string>
 #include "MyStack.h"
-
-std::string infix2postfix (std::string inf);
-
-#endif // INCLUDE_MYSTACK_H_
+std::string infix2postfix(std::string inf);
+#endif   // INCLUDE_POSTFIX_H_

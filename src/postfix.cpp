@@ -2,21 +2,21 @@
 
 #include "postfix.h"
 
-std::string infix2postfix (std::string inf) {
+std::string infix2postfix(std::string inf) {
   inf.push_back(' ');
   MyStack <char> operatorStack(400);
   std::string post;
   char prev = 0;
   std::string ifNum = "1234567890.";
-  for (auto symb:inf) {
+  for (auto symb : inf) {
     if (ifNum.find(prev) != std::string::npos &&
         ifNum.find(symb) == std::string::npos) {
       post.push_back(' ');
     }
-    if (symb == '(' ) {
+    if (symb == '(') {
       operatorStack.push(symb);
-    } else if (symb == ')' ) {
-      while (!(operatorStack.isEmpty()) &&
+    } else if (symb == ')') {
+      while (!operatorStack.isEmpty() &&
              operatorStack.get() != '(') {
         post.push_back(operatorStack.pop());
         post.push_back(' ');
@@ -27,7 +27,7 @@ std::string infix2postfix (std::string inf) {
     } else if (ifNum.find(symb) != std::string::npos) {
       post.push_back(symb);
     } else if (symb == '/' || symb == '*') {
-      while (!(operatorStack.isEmpty()) &&
+      while (!operatorStack.isEmpty() &&
               operatorStack.get() != '(' &&
               operatorStack.get() != '+' &&
               operatorStack.get() != '-') {
@@ -36,7 +36,7 @@ std::string infix2postfix (std::string inf) {
       }
       operatorStack.push(symb);
     } else if (symb == '+' || symb == '-') {
-      while (!(operatorStack.isEmpty()) &&
+      while (!operatorStack.isEmpty() &&
              operatorStack.get() != '(') {
         post.push_back(operatorStack.pop());
         post.push_back(' ');
@@ -45,7 +45,7 @@ std::string infix2postfix (std::string inf) {
     }
     prev = symb;
   }
-  while (!(operatorStack.isEmpty())){
+  while (!operatorStack.isEmpty()) {
     post.push_back(operatorStack.pop());
     post.push_back(' ');
   }
