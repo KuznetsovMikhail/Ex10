@@ -1,8 +1,8 @@
-// Copyright 2020 A.SHT
-#include <iostream>
-#include <string>
+// Copyright 2021 Kuznetsov Mikhail
 
-#include "postfix.h"
+#include "MyStack.h"
+#include <iostream>
+#include <cstdlib>
 
 int main() {
   return 0;
