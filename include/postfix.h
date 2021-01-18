@@ -1,6 +1,6 @@
 // Copyright 2021 Kuznetsov Mikhail
-#ifndef INCLUDE_MYSTACK_H_
-#define INCLUDE_MYSTACK_H_
+#ifndef INCLUDE_POSTFIX_H_
+#define INCLUDE_POSTFIX_H_
 
 #include <string>
 #include "MyStack.h"
